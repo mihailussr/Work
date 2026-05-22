@@ -93,14 +93,16 @@ const App = () => {
         
         {/* Контейнер для объявления маршрутов */}
         <Routes>
+
           {/* Маршрут главной страницы (путь: /) */}
           <Route path="/" element={<HomePage />} />
           
           {/* Маршрут страницы каталога (путь: /catalog) */}
           <Route path="/catalog" element={<Catalog />} />
-          
+
           {/* Маршрут страницы каталога (путь: /basket) */}
           <Route path="/basket" element={<Basket />} />
+          
         </Routes>
       </div>
     </BrowserRouter>

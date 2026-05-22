@@ -105,7 +105,7 @@ const Catalog = () => {
     localStorage.setItem('cart', JSON.stringify(existingCart))
     
     // Показываем уведомление
-    alert(`✅ Товар "${item.name}" добавлен в корзину!`)
+    // alert(`✅ Товар "${item.name}" добавлен в корзину!`)
   }
 
   return (
