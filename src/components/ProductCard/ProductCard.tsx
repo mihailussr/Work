@@ -1,23 +1,20 @@
-import { Navigate, useNavigate } from 'react-router-dom'
 import s from './ProductCard.module.css'
 
-const ProductsCard =() => {
-  const navigate = useNavigate() // ← хук для навигации
+const ProductCard = ({ item, onAddToCart }) => {
 
-}
+  const handleAddToCart = (e) => {
+    e.stopPropagation()
+    if (onAddToCart) {
+      onAddToCart(item)
+    }
+  }
 
-// Функция для перехода на страницу корзины
-const goToBasket = () => {
-  Navigate('/basket')
-}
-
-const ProductCard = ({ item }) => {
   return (
     <div className={s.productItem}>
       <div className={s.productImg}>
         <img src={item.img} alt={item.name} />
         <div className={s.productOverlay}>
-          <button className={s.addToCartBtn} onClick={goToBasket}> {/* // ← добавляем обработчик клика */}
+          <button className={s.addToCartBtn} onClick={handleAddToCart}>
             <img src="images/cart.svg" alt="cart" />
             Купить
           </button>
@@ -34,4 +31,3 @@ const ProductCard = ({ item }) => {
 }
 
 export default ProductCard
-

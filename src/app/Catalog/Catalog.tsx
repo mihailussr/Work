@@ -1,7 +1,12 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import s from './Catalog.module.css'
 import ProductCard from '../../components/ProductCard/ProductCard'
 
+
 const Catalog = () => {
+  const navigate = useNavigate()
+  
   const catalogItems = [
     {
       id: 1,
@@ -77,6 +82,32 @@ const Catalog = () => {
     }
   ]
 
+  // Функция добавления товара в корзину
+  const addToCart = (item) => {
+    // Получаем текущую корзину из localStorage
+    const existingCart = JSON.parse(localStorage.getItem('cart') || '[]')
+    
+    // Проверяем, есть ли уже такой товар в корзине
+    const existingItemIndex = existingCart.findIndex(cartItem => cartItem.id === item.id)
+    
+    if (existingItemIndex !== -1) {
+      // Если товар уже есть — увеличиваем количество
+      existingCart[existingItemIndex].quantity += 1
+    } else {
+      // Если товара нет — добавляем с количеством 1
+      existingCart.push({
+        ...item,
+        quantity: 1
+      })
+    }
+    
+    // Сохраняем обновлённую корзину
+    localStorage.setItem('cart', JSON.stringify(existingCart))
+    
+    // Показываем уведомление
+    alert(`✅ Товар "${item.name}" добавлен в корзину!`)
+  }
+
   return (
     <div className={s.shop}>
       {/* Хлебные крошки и заголовок */}
@@ -112,7 +143,11 @@ const Catalog = () => {
       <div className={s.productGrid}>
         <div className={s.productContainer}>
           {catalogItems.map((item) => (
-            <ProductCard key={item.id} item={item} />
+            <ProductCard 
+              key={item.id} 
+              item={item} 
+              onAddToCart={addToCart}  // ← передаём функцию
+            />
           ))}
         </div>
       </div>
