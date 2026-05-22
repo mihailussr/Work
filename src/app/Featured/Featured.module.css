@@ -1,0 +1,155 @@
+.featuredContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 15px;
+    text-align: center;
+}
+
+.featuredHeader {
+    font-size: 30px;
+    font-weight: 900;
+    color: #222222;
+    margin-bottom: 10px;
+}
+
+.featuredTitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #9f9f9f;
+    margin-bottom: 48px;
+}
+
+.featuredItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 48px;
+}
+
+.featuredItem {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+    background: #f8f8f8;
+}
+
+.featuredImgWrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.featuredImgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.featuredImgDark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.featuredImgWrap:hover .featuredImgDark {
+    opacity: 1;
+}
+
+.featuredImgDark button {
+    background: none;
+    border: 1px solid white;
+    padding: 10px 20px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.featuredImgDark button:hover {
+    background: #f16d7f;
+    border-color: #f16d7f;
+}
+
+.featuredImgDark button img {
+    width: 20px;
+    height: 20px;
+}
+
+.featuredData {
+    padding: 20px 16px;
+    text-align: left;
+}
+
+.featuredName {
+    font-size: 13px;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.featuredText {
+    font-size: 14px;
+    font-weight: 300;
+    color: #5d5d5d;
+    margin-bottom: 18px;
+    line-height: 1.4;
+}
+
+.featuredPrice {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f16d7f;
+}
+
+.featuredBrowseBtn {
+    background: none;
+    border: 1px solid #f16d7f;
+    padding: 15px 40px;
+    color: #f16d7f;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.featuredBrowseBtn:hover {
+    background: #f16d7f;
+    color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .featuredItem {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .featuredContainer {
+        padding: 40px 15px;
+    }
+    
+    .featuredHeader {
+        font-size: 24px;
+    }
+    
+    .featuredItems {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    .featuredItem {
+        flex: 1 1 100%;
+    }
+}

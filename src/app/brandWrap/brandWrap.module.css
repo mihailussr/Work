@@ -1,0 +1,63 @@
+/* Основной контейнер - две колонки */
+.brandContainer {
+    display: flex;
+    min-height: 363px;
+    margin-bottom: 60px
+}
+
+/* Левая колонка с картинкой */
+.brandLeft {
+    flex: 1;
+}
+
+.brandLeft img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Правая колонка с текстом */
+.brandRight {
+    flex: 1;
+    background: #f1e4e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер для текста */
+.brandPromoWrap {
+    position: relative;
+    padding-left: 28px;
+}
+
+/* Левая красная линия */
+.brandLeftLine {
+    width: 12px;
+    height: 70px;
+    background: #f16d7f;
+    position: absolute;
+    left: 0;
+    top: 55%;
+    transform: translateY(-50%)
+}
+
+/* Текст THE BRAND */
+.brandTopSign {
+    font-weight: 900;
+    font-size: 38px;
+    color: #222222;
+}
+
+/* Текст OF LUXERIOUS FASHION */
+.brandBottomSign {
+    font-weight: bold;
+    font-size: 20px;
+    color: #222222;
+}
+
+.brandBottomSign span {
+    color: #f16d7f;
+    font-weight: 900;
+}

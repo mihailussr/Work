@@ -1,0 +1,79 @@
+.offersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.offerWomen,
+.offerMen,
+.offerKids,
+.offerAccesories {
+    position: relative;
+    overflow: hidden;
+}
+
+.offerWomen,
+.offerMen,
+.offerKids {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 200px;
+}
+
+.offerAccesories {
+    flex: 1 1 100%;
+}
+
+.offerImgThree,
+.offerImgLast {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.offerTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.offerTitleTop {
+    font-size: 16px;
+    font-weight: 400;
+    color: #f16d7f;
+}
+
+.offerTitleBottom {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+/* Адаптивность для разных экранов */
+@media (max-width: 768px) {
+    .offersContainer {
+        gap: 20px;
+    }
+    
+    .offerWomen,
+    .offerMen,
+    .offerKids {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .offerWomen,
+    .offerMen,
+    .offerKids {
+        flex: 1 1 100%;
+    }
+}

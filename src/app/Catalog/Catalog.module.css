@@ -1,0 +1,162 @@
+/* Хлебные крошки */
+.breadcrumbs {
+    background: #f8f3f4;
+    padding: 60px 0;
+    margin-bottom: 60px;
+}
+
+.breadcrumbsContainer {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.breadcrumbsContainer h1 {
+    font-size: 24px;
+    font-weight: 900;
+    color: #f16d7f;
+    margin: 0;
+}
+
+.breadcrumbLinks {
+    font-size: 14px;
+    color: #636363;
+}
+
+.breadcrumbLinks span {
+    font-weight: 700;
+    color: #f16d7f;
+}
+
+/* Фильтр и сортировка */
+.filterSort {
+    margin-bottom: 40px;
+}
+
+.filterContainer {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filterButton {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #222222;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ebebeb;
+}
+
+.filterButton:hover {
+    background: #f16d7f;
+    color: white;
+    border-color: #f16d7f;
+}
+
+.sortSelect {
+    padding: 10px 15px;
+    border: 1px solid #ebebeb;
+    background: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Сетка товаров */
+.productGrid {
+    margin-bottom: 60px;
+}
+
+.productContainer {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Пагинация */
+.pagination {
+    margin-bottom: 60px;
+}
+
+.paginationContainer {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.paginationBtn {
+    padding: 10px 15px;
+    border: 1px solid #ebebeb;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.paginationBtn:hover,
+.paginationBtn.active {
+    background: #f16d7f;
+    color: white;
+    border-color: #f16d7f;
+}
+
+/* Адаптивность для планшетов 768px */
+@media (max-width: 768px) {
+    .breadcrumbs {
+        padding: 40px 0;
+        margin-bottom: 40px;
+    }
+    
+    .breadcrumbsContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .breadcrumbsContainer h1 {
+        font-size: 20px;
+    }
+    
+    .productContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Адаптивность для iPhone 11 Pro */
+@media (max-width: 540px) {
+    .productContainer {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .filterContainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filterButton,
+    .sortSelect {
+        width: 100%;
+    }   
+    
+    .paginationContainer {
+        flex-wrap: wrap;
+    }
+}

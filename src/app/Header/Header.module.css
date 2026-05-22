@@ -1,0 +1,17 @@
+.Head {
+    background: #222222;
+    height: 74px;
+    padding: 18px 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Head img{
+    margin-left: 37px;
+  }
+
+  .cartIcon {
+    margin-right: 20px;
+  }
