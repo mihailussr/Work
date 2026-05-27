@@ -37,13 +37,12 @@ import BrandWrap from './app/brandWrap/brandWrap' // Блок с брендам�
 import Offers from './app/offers/offers'          // Блок с предложениями
 import Featured from './app/Featured/Featured'    // Блок с избранным
 import Catalog from './app/Catalog/Catalog'       // Страница каталога
-import Basket from './app/Сontext/BasketContext'
+import Basket from './app/Context/BasketProvider' // Страницы Корзины
 /**
  * Импорт глобальных стилей
  * @description CSS-файл, применяемый ко всему приложению
  */
 import './index.css'
-
 
 // ===================== КОМПОНЕНТ ГЛАВНОЙ СТРАНИЦЫ =====================
 
@@ -103,6 +102,12 @@ const App = () => {
           {/* Маршрут страницы каталога (путь: /basket) */}
           <Route path="/basket" element={<Basket />} />
           
+          {/* 🔴 ДОБАВЛЕНО: Обработчик 404  */}
+          <Route path="*" element={<div style={{textAlign: 'center', padding: '50px'}}>
+            <h1>404 - Страница не найдена</h1>
+            <a href="/">Вернуться на главную</a>
+          </div>} />
+          
         </Routes>
       </div>
     </BrowserRouter>
@@ -121,9 +126,17 @@ const App = () => {
  * 
  * // Результат: приложение отображается на странице
  */
-createRoot(document.getElementById('root')!).render(
-  // Строгий режим — помогает находить ошибки в коде
-  <StrictMode>
-    <App />  {/* Запуск главного компонента */}
-  </StrictMode>
-)
+
+// 🔴 ИСПРАВЛЕНО: Добавил проверку существования элемента
+const rootElement = document.getElementById('root')
+if (rootElement) {
+  createRoot(rootElement).render(
+    // Строгий режим — помогает находить ошибки в коде
+    <StrictMode>
+      <App />  {/* Запуск главного компонента */}
+    </StrictMode>
+  )
+} else {
+  console.error('Критическая ошибка: элемент #root не найден в HTML')
+  document.body.innerHTML = '<div style="text-align:center;margin-top:50px"><h1>Ошибка загрузки приложения</h1><p>Не найден корневой элемент</p></div>'
+}

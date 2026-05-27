@@ -28,7 +28,7 @@ import { useNavigate, Link } from 'react-router-dom'
  * Импорт стилей компонента корзины
  * @description CSS-модуль с классами для стилизации страницы корзины
  */
-import s from './BasketContext.module.css'
+import s from './BasketProvider.module.css'
 
 
 // ===================== КОМПОНЕНТ СТРАНИЦЫ КОРЗИНЫ =====================
